@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="mainActivityBackground">#696969</color>
+    <color name="openFieldButtonNormal">#fabf1c</color>
+    <color name="openFieldButtonPress">#a37c13</color>
+    <color name="newFieldButtonNormal">#1cacfa</color>
+    <color name="newFieldButtonPress">#136ea3</color>
+    <color name="shapeColor">#494949</color>
+    <color name="whiteTranslucent">#7dffffff</color>
+    <color name="myGreen">#22ac38</color>
+    <color name="myGreenLight">#71a97a</color>
+    <color name="inputBackgroundColor">#efefef</color>
+    <color name="translucent">#00ffffff</color>
+    <color name="fieldColor">#b28850</color>
+    <color name="fieldColorLight">#d2ae7e</color>
+    <color name="myRed">#e9312e</color>
+    <color name="myRedLight">#f25755</color>
+</resources>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/newField"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/myGreen">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:text="新建土地"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/newFieldBackButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/new_field_back_button" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutSelectShape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <Spinner
+            android:id="@+id/selectShapSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/selectShape"
+            android:layout_centerHorizontal="false"
+            android:layout_centerInParent="false"
+            android:background="@drawable/input_background"
+            android:gravity="center"
+            android:paddingLeft="70dp"
+            android:paddingRight="20dp"
+            android:spinnerMode="dialog" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@mipmap/goto_select" />
+
+        <TextView
+            android:id="@+id/selectShape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/selectShapSpinner"
+            android:layout_alignStart="@+id/selectShapSpinner"
+            android:layout_below="@+id/newField"
+            android:background="@drawable/input_tip_background"
+            android:gravity="center"
+            android:text="选择形状"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutAreaPrePeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutSelectShape"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/inputAreaPrePeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_background"
+            android:ems="10"
+            android:hint="单位 亩/人"
+            android:inputType="numberDecimal"
+            android:paddingLeft="70dp"
+            android:paddingRight="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/areaPrePeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/input_tip_background"
+            android:gravity="center"
+            android:text="人均亩数"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutAreaPrePeople"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/inputHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_background"
+            android:ems="10"
+            android:hint="单位 米"
+            android:inputType="numberDecimal"
+            android:paddingLeft="70dp"
+            android:paddingRight="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/input_tip_background"
+            android:gravity="center"
+            android:text="高"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutDownBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutHeight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/inputDownBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="false"
+            android:background="@drawable/input_background"
+            android:ems="10"
+            android:hint="单位 米"
+            android:inputType="numberDecimal"
+            android:paddingLeft="70dp"
+            android:paddingRight="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/downBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_tip_background"
+            android:gravity="center"
+            android:text="下底"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutUpBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutDownBottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/inputUpBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_background"
+            android:ems="10"
+            android:hint="单位 米"
+            android:inputType="numberDecimal"
+            android:paddingLeft="70dp"
+            android:paddingRight="20dp"
+            android:textColorLink="@color/colorAccent"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/upBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/input_tip_background"
+            android:gravity="center"
+            android:text="上底"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/allArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutUpBottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/all_area_background"
+        android:gravity="center"
+        android:text="总面积"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/createFieldButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allArea"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_green"
+        android:text="生成土地"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

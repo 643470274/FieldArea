@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <com.fieldarea.whon.fieldarea.FieldView
+            android:id="@+id/fieldView"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/restArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="面积"
+            android:textColor="@android:color/white"
+            android:textSize="10sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutTop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/inputFieldArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/input_background"
+            android:ems="10"
+            android:hint="单位 平方米"
+            android:inputType="numberDecimal"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/needArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/input_tip_background_field_start"
+            android:gravity="center"
+            android:text="划分面积"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/selectCalculateSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/input_tip_background_field_end"
+            android:gravity="center"
+            android:spinnerMode="dialog" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/addDivideField"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/layoutArea"
+        android:layout_alignStart="@+id/layoutArea"
+        android:layout_below="@+id/layoutArea"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/add_button_background"
+        android:text="添加农田"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/deleteDivideField"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/layoutArea"
+        android:layout_alignRight="@+id/layoutArea"
+        android:layout_below="@+id/layoutArea"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/delete_button_background"
+        android:text="删除农田"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
