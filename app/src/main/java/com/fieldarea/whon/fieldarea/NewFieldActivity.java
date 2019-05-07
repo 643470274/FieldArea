@@ -21,8 +21,6 @@ import android.widget.Toast;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Whon on 2018/6/27.
@@ -38,26 +36,38 @@ public class NewFieldActivity extends Activity{
     private float                                          area = 0;
     private boolean                                        shape = true;//三角true，梯形false
 
-    @BindView(R.id.selectShapSpinner)Spinner selectShapeSpinner;
-    @BindView(R.id.inputAreaPrePeople)EditText inputAreaPrePeople;
-    @BindView(R.id.inputHeight)EditText inputHeight;
-    @BindView(R.id.inputDownBottom)EditText inputDownBottom;
-    @BindView(R.id.inputUpBottom)EditText inputUpBottom;
-    @BindView(R.id.allArea)TextView allArea;
-    @BindView(R.id.layoutUpBottom)FrameLayout layoutUpBottom;
-    @BindView(R.id.createFieldButton)Button createFieldButton;
-    @BindView(R.id.newFieldBackButton)Button newFieldBackButton;
+    private Spinner selectShapeSpinner;
+    private EditText inputAreaPrePeople;
+    private EditText inputHeight;
+    private EditText inputDownBottom;
+    private EditText inputUpBottom;
+    private TextView allArea;
+    private FrameLayout layoutUpBottom;
+    private Button createFieldButton;
+    private Button newFieldBackButton;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Translucent.setStatusTranslucent(getWindow());
         SetStatusBar.setStatusBarLightMode(getWindow(),false);
         setContentView(R.layout.activity_new_field);
-        ButterKnife.bind(this);
+        init();
         spinnerAdapter = new ArrayAdapter<String>(context,R.layout.item_select,R.id.text,Constants.shape);
         spinnerAdapter.setDropDownViewResource(R.layout.item_select_dropdown);
         selectShapeSpinner.setAdapter(spinnerAdapter);
         initListener();
+    }
+
+    private void init(){
+        selectShapeSpinner = (Spinner)findViewById(R.id.selectShapSpinner);
+        inputAreaPrePeople = (EditText)findViewById(R.id.inputAreaPrePeople);
+        inputHeight = (EditText)findViewById(R.id.inputHeight);
+        inputDownBottom = (EditText)findViewById(R.id.inputDownBottom);
+        inputUpBottom = (EditText)findViewById(R.id.inputUpBottom);
+        allArea = (TextView)findViewById(R.id.allArea);
+        layoutUpBottom = (FrameLayout)findViewById(R.id.layoutUpBottom);
+        createFieldButton = (Button)findViewById(R.id.createFieldButton);
+        newFieldBackButton = (Button)findViewById(R.id.newFieldBackButton);
     }
 
     private void initListener(){

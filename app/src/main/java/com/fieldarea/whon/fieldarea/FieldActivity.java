@@ -3,33 +3,21 @@ package com.fieldarea.whon.fieldarea;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Whon on 2018/6/28.
@@ -49,19 +37,19 @@ public class FieldActivity extends Activity {
     private float fieldUpBottom;
     private float fieldArea;
 
-    @BindView(R.id.fieldView)FieldView fieldView;
-    @BindView(R.id.inputFieldArea)EditText inputFieldArea;
-    @BindView(R.id.selectCalculateSpinner)Spinner selectCalculateSpinner;
-    @BindView(R.id.restArea)TextView restArea;
-    @BindView(R.id.addDivideField)Button addDivideField;
-    @BindView(R.id.deleteDivideField)Button deleteDivideField;
+    private FieldView fieldView;
+    private EditText inputFieldArea;
+    private Spinner selectCalculateSpinner;
+    private TextView restArea;
+    private Button addDivideField;
+    private Button deleteDivideField;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Translucent.setStatusTranslucent(getWindow());
         SetStatusBar.setStatusBarLightMode(getWindow(),false);
         setContentView(R.layout.activity_field);
-        ButterKnife.bind(this);
+        init();
         Intent intent = getIntent();
         areaPrePeople = intent.getFloatExtra("areaPrePeople",1);
         fieldHeight = intent.getFloatExtra("fieldHeight",0);
@@ -75,6 +63,15 @@ public class FieldActivity extends Activity {
         selectCalculateSpinner.setAdapter(adapter);
         Log.d(TAG, "onClick: "+fieldHeight+" "+fieldDownBottom+" "+fieldUpBottom+" "+fieldArea);
         initListener();
+    }
+
+    private void init(){
+        fieldView = (FieldView)findViewById(R.id.fieldView);
+        inputFieldArea = (EditText)findViewById(R.id.inputFieldArea);
+        selectCalculateSpinner = (Spinner)findViewById(R.id.selectCalculateSpinner);
+        restArea = (TextView)findViewById(R.id.restArea);
+        addDivideField = (Button)findViewById(R.id.addDivideField);
+        deleteDivideField = (Button)findViewById(R.id.deleteDivideField);
     }
 
     private void initListener(){

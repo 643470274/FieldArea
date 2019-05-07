@@ -12,8 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends Activity {
 
@@ -24,8 +22,8 @@ public class MainActivity extends Activity {
 
     private Context                     context = this;
 
-    @BindView(R.id.openFieldButton) Button openFieldButton;
-    @BindView(R.id.newFieldButton)Button newFieldButton;
+    private Button openFieldButton;
+    private Button newFieldButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class MainActivity extends Activity {
         Translucent.setStatusTranslucent(getWindow());
         SetStatusBar.setStatusBarLightMode(getWindow(),false);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        init();
         if(Build.VERSION.SDK_INT>=22){
             if(hasPermission(Constants.permissions)){
                 initListener();
@@ -44,6 +42,11 @@ public class MainActivity extends Activity {
             initListener();
         }
 
+    }
+
+    private void init(){
+        openFieldButton = (Button) findViewById(R.id.openFieldButton);
+        newFieldButton = (Button) findViewById(R.id.newFieldButton);
     }
 
     private void initListener(){
