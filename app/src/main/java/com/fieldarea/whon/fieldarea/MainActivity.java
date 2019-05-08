@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MainActivity extends Activity {
 
     // Used to load the 'native-lib' library on application startup.
@@ -45,8 +44,8 @@ public class MainActivity extends Activity {
     }
 
     private void init(){
-        openFieldButton = (Button) findViewById(R.id.openFieldButton);
-        newFieldButton = (Button) findViewById(R.id.newFieldButton);
+        openFieldButton = (Button)findViewById(R.id.openFieldButton);
+        newFieldButton = (Button)findViewById(R.id.newFieldButton);
     }
 
     private void initListener(){
