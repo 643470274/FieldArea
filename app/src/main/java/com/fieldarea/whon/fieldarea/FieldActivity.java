@@ -27,6 +27,11 @@ public class FieldActivity extends Activity {
 
     private static final String TAG = FieldActivity.class.getSimpleName();
 
+    private static final float DEFAULT_HEIGHT = 100f;
+    private static final float DEFAULT_UPBOTTOM = 0f;
+    private static final float DEFAULT_DOWNBOTTOM = 100f;
+    private static final float DEFAULT_AREA_PRE_PEOPLE = 1f;
+
     private Context context = this;
     private ArrayAdapter<String > adapter;
 
@@ -51,11 +56,11 @@ public class FieldActivity extends Activity {
         setContentView(R.layout.activity_field);
         init();
         Intent intent = getIntent();
-        areaPrePeople = intent.getFloatExtra("areaPrePeople",1);
-        fieldHeight = intent.getFloatExtra("fieldHeight",0);
-        fieldDownBottom = intent.getFloatExtra("fieldDownBottom",0);
-        fieldUpBottom = intent.getFloatExtra("fieldUpBottom",0);
-        fieldArea = intent.getFloatExtra("fieldArea",0);
+        areaPrePeople = intent.getFloatExtra("areaPrePeople",DEFAULT_AREA_PRE_PEOPLE);
+        fieldHeight = intent.getFloatExtra("fieldHeight",DEFAULT_HEIGHT);
+        fieldDownBottom = intent.getFloatExtra("fieldDownBottom",DEFAULT_DOWNBOTTOM);
+        fieldUpBottom = intent.getFloatExtra("fieldUpBottom",DEFAULT_UPBOTTOM);
+        fieldArea = intent.getFloatExtra("fieldArea",DEFAULT_HEIGHT*DEFAULT_DOWNBOTTOM/2);
         fieldView.setParams(fieldHeight,fieldDownBottom,fieldUpBottom,fieldArea);
         setText();
         adapter = new ArrayAdapter<String >(context,R.layout.item_select_white,R.id.text,Constants.calculate);
@@ -129,7 +134,7 @@ public class FieldActivity extends Activity {
                     height =fieldHeight - getDivideLength(area,true);
                     downBottom = fieldDownBottom;
                     upBottom = getDivideLength(area,false);
-                    fieldView.createShape(Color.RED,height,downBottom,upBottom,srcArea);
+                    fieldView.createShape(Color.BLACK,height,downBottom,upBottom,srcArea);
                     fieldView.postInvalidate();
                     fieldArea = fieldArea - srcArea;
                     fieldHeight = fieldHeight - height;

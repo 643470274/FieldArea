@@ -145,23 +145,18 @@ public class NewFieldActivity extends Activity{
                 }
                 if(inputHeight.getText().toString().length()!=0) {
                     intent.putExtra("fieldHeight", Float.parseFloat(inputHeight.getText().toString()));
-                }else {
-                    Toast.makeText(context,"输入高的长度",Toast.LENGTH_SHORT).show();
-                    return;
                 }
                 if(inputDownBottom.getText().toString().length()!=0) {
                     intent.putExtra("fieldDownBottom", Float.parseFloat(inputDownBottom.getText().toString()));
-                }
-                else{
-                    Toast.makeText(context,"输入底的长度",Toast.LENGTH_SHORT).show();
-                    return;
                 }
                 if(!shape){
                     if(inputUpBottom.getText().toString().length()!=0) {
                         intent.putExtra("fieldUpBottom", Float.parseFloat(inputUpBottom.getText().toString()));
                     }
                 }
-                intent.putExtra("fieldArea",area);
+                if (area > 0) {
+                    intent.putExtra("fieldArea", area);
+                }
                 startActivity(intent);
             }
         });
