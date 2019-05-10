@@ -4,4 +4,7 @@
     <string name="open_field">打开土地规划</string>
     <string name="add_field">添加农田</string>
     <string name="delete_field">删除农田</string>
+    <string name="field_area">面积</string>
+    <string name="unit_m2">单位 平方米</string>
+    <string name="divide_area">划分面积</string>
 </resources>

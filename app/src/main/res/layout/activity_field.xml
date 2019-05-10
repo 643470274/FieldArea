@@ -16,22 +16,20 @@
             android:id="@+id/fieldView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:clickable="true" />
+            android:clickable="true"
+            android:focusable="true"/>
 
         <TextView
             android:id="@+id/restArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="false"
             android:layout_gravity="bottom"
             android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="面积"
+            android:text="@string/field_area"
             android:textColor="@android:color/white"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
     </FrameLayout>
 
@@ -47,10 +45,10 @@
             android:id="@+id/inputFieldArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:background="@drawable/input_background"
             android:ems="10"
-            android:hint="单位 平方米"
+            android:hint="@string/unit_m2"
             android:inputType="numberDecimal"
             android:paddingLeft="70dp"
             android:paddingRight="70dp"
@@ -63,7 +61,7 @@
             android:layout_gravity="center_vertical"
             android:background="@drawable/input_tip_background_field_start"
             android:gravity="center"
-            android:text="划分面积"
+            android:text="@string/divide_area"
             android:textColor="@android:color/white"
             android:textSize="12sp" />
 
@@ -71,7 +69,7 @@
             android:id="@+id/selectCalculateSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:background="@drawable/input_tip_background_field_end"
             android:gravity="center"
             android:spinnerMode="dialog" />
@@ -84,8 +82,10 @@
         android:layout_width="@dimen/button_middle_side_long"
         android:layout_height="@dimen/button_middle_side_long"
         android:layout_alignLeft="@id/layoutArea"
+        android:layout_alignStart="@id/layoutArea"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/middle_margin"
+        android:layout_marginStart="@dimen/middle_margin"
         android:layout_marginBottom="@dimen/middle_margin"
         android:background="@drawable/add_button_background"
         android:text="@string/add_field"
@@ -97,8 +97,10 @@
         android:layout_width="@dimen/button_middle_side_long"
         android:layout_height="@dimen/button_middle_side_long"
         android:layout_alignRight="@id/layoutArea"
+        android:layout_alignEnd="@id/layoutArea"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/middle_margin"
+        android:layout_marginEnd="@dimen/middle_margin"
         android:layout_marginBottom="@dimen/middle_margin"
         android:background="@drawable/delete_button_background"
         android:text="@string/delete_field"
