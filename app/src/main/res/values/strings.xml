@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">土地划分</string>
+    <string name="new_field">新建土地规划</string>
+    <string name="open_field">打开土地规划</string>
+    <string name="add_field">添加农田</string>
+    <string name="delete_field">删除农田</string>
 </resources>

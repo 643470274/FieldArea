@@ -7,14 +7,17 @@
     <FrameLayout
         android:id="@+id/layoutTop"
         android:layout_width="match_parent"
-        android:layout_height="360dp">
+        android:layout_height="@dimen/edit_field_area_height"
+        android:layout_above="@id/layoutArea"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/middle_margin">
 
         <com.fieldarea.whon.fieldarea.FieldView
             android:id="@+id/fieldView"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:layout_alignParentLeft="true"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:clickable="true" />
 
@@ -24,8 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="false"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:text="面积"
             android:textColor="@android:color/white"
             android:textSize="10sp" />
@@ -36,9 +39,9 @@
         android:id="@+id/layoutArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutTop"
+        android:layout_above="@id/addDivideField"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginBottom="@dimen/middle_margin">
 
         <EditText
             android:id="@+id/inputFieldArea"
@@ -78,31 +81,27 @@
     <Button
         android:id="@+id/addDivideField"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignLeft="@+id/layoutArea"
-        android:layout_alignStart="@+id/layoutArea"
-        android:layout_below="@+id/layoutArea"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/button_middle_side_long"
+        android:layout_height="@dimen/button_middle_side_long"
+        android:layout_alignLeft="@id/layoutArea"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/middle_margin"
+        android:layout_marginBottom="@dimen/middle_margin"
         android:background="@drawable/add_button_background"
-        android:text="添加农田"
+        android:text="@string/add_field"
         android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/deleteDivideField"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignEnd="@+id/layoutArea"
-        android:layout_alignRight="@+id/layoutArea"
-        android:layout_below="@+id/layoutArea"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/button_middle_side_long"
+        android:layout_height="@dimen/button_middle_side_long"
+        android:layout_alignRight="@id/layoutArea"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/middle_margin"
+        android:layout_marginBottom="@dimen/middle_margin"
         android:background="@drawable/delete_button_background"
-        android:text="删除农田"
+        android:text="@string/delete_field"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/newField"
         android:layout_width="match_parent"
-        android:layout_height="66dp"
+        android:layout_height="@dimen/title_background_top_height"
         android:background="@color/myGreen">
 
         <TextView
@@ -28,12 +28,12 @@
             android:id="@+id/newFieldBackButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="bottom|left"
-            android:layout_marginBottom="11dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginBottom="11dp"
             android:background="@drawable/new_field_back_button" />
     </RelativeLayout>
 

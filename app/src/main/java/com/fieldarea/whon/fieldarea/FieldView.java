@@ -3,7 +3,6 @@ package com.fieldarea.whon.fieldarea;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.PointF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -23,14 +22,12 @@ public class FieldView extends View{
     private static final String TAG = FieldView.class.getSimpleName();
 
     private PointF                      lbTemp;
-    private PointF                      canvasPoint;
     private ArrayList<Shape>            shapes;
     private Stack<Float>                heightPXs;
 
     private int                         drawCount = 0;
     private int                         height = 0;
     private int                         width = 0;
-    private int                         color = 0;
     private int                         firstPointerID,secondPointerID;
     private float                       firstPointerX,firstPointerY;
     private float                       sScale = 1,scale=1,sd = 1,ld = 1,centerX = 0,centerY = 0;
@@ -57,9 +54,8 @@ public class FieldView extends View{
     }
 
     private void init(){
-        shapes = new ArrayList<Shape>();
-        heightPXs = new Stack<Float>();
-        canvasPoint = new PointF(0,0);
+        shapes = new ArrayList<>();
+        heightPXs = new Stack<>();
     }
 
     public void setParams(float fieldHeight,float fieldDownBottom,float fieldUpBottom,float fieldArea){
@@ -77,13 +73,13 @@ public class FieldView extends View{
         height = getHeight();
         width = getWidth();
         if(drawCount == 0)createShape(Color.GREEN,fieldHeight,fieldDownBottom,fieldUpBottom,fieldArea);
-        color = getResources().getColor(R.color.fieldColor);
+        int color = getResources().getColor(R.color.fieldColor);
         canvas.drawColor(color);
         int i = 0;
         for(Shape shape:shapes){
             float[] lines = scaleShape(sScale*scale,shape.lines);
             canvas.drawLines(lines,shape.paint);
-            shape.setTextPoint(lines,i == 0? true:false);
+            shape.setTextPoint(lines,i == 0);
             canvas.drawText(shape.heightText,shape.heightPoint.x,shape.heightPoint.y,shape.paint);
             canvas.drawText(shape.downBottomText,shape.downBottomPoint.x,shape.downBottomPoint.y,shape.paint);
             if(shape.lt.x != shape.rt.x)
@@ -95,6 +91,15 @@ public class FieldView extends View{
         if(drawCount < 10)
         drawCount++;
     }
+
+    /**
+     * 创建图形
+     * @param color 颜色
+     * @param fieldHeight 高
+     * @param fieldDownBottom 下底
+     * @param fieldUpBottom 上底
+     * @param fieldArea 面积
+     */
     public void createShape(int color,float fieldHeight,float fieldDownBottom,float fieldUpBottom,float fieldArea){
         Shape shape;
         PointF lb,rb,lt,rt;
@@ -139,6 +144,11 @@ public class FieldView extends View{
             offset += heightPXs.push(height);
         }
     }
+
+    /**
+     * 删除图形
+     * @return 删除的图形
+     */
     public Shape deleteShape(){
         Shape shape;
         if(shapes.size() > 1){

@@ -1,12 +1,12 @@
 package com.fieldarea.whon.fieldarea;
 
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.PointF;
 
 import java.text.DecimalFormat;
 
 /**
+ * 四边形
  * Created by Whon on 2018/6/29.
  */
 
