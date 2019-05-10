@@ -28,8 +28,12 @@ import java.util.List;
 public class NewFieldActivity extends Activity{
     private static final String TAG = NewFieldActivity.class.getSimpleName();
 
+    private static final float DEFAULT_HEIGHT = 100f;
+    private static final float DEFAULT_UPBOTTOM = 0f;
+    private static final float DEFAULT_DOWNBOTTOM = 100f;
+    private static final float DEFAULT_AREA_PRE_PEOPLE = 1f;
+
     private Context                                         context = this;
-    private List<HashMap<String,Object>>                    datalist;
     private ArrayAdapter<String >                           spinnerAdapter;
 
     private float                                          area = 0;
@@ -139,19 +143,56 @@ public class NewFieldActivity extends Activity{
         createFieldButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                float areaPrePeople;
+                float fieldHeight;
+                float fieldDownBottom;
+                float fieldUpBottom;
                 Intent intent = new Intent(context,FieldActivity.class);
                 if(inputAreaPrePeople.getText().toString().length()!=0){
-                    intent.putExtra("areaPrePeople", Float.parseFloat(inputAreaPrePeople.getText().toString()));
+                    areaPrePeople = Float.parseFloat(inputAreaPrePeople.getText().toString());
+                    if (areaPrePeople == 0f){
+                        Toast.makeText(context,"人均亩数不能为0",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    intent.putExtra("areaPrePeople", areaPrePeople);
                 }
                 if(inputHeight.getText().toString().length()!=0) {
-                    intent.putExtra("fieldHeight", Float.parseFloat(inputHeight.getText().toString()));
+                    fieldHeight = Float.parseFloat(inputHeight.getText().toString());
+                    if (fieldHeight == 0f){
+                        Toast.makeText(context,"高度不能为0",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    intent.putExtra("fieldHeight", fieldHeight);
                 }
                 if(inputDownBottom.getText().toString().length()!=0) {
-                    intent.putExtra("fieldDownBottom", Float.parseFloat(inputDownBottom.getText().toString()));
-                }
-                if(!shape){
-                    if(inputUpBottom.getText().toString().length()!=0) {
-                        intent.putExtra("fieldUpBottom", Float.parseFloat(inputUpBottom.getText().toString()));
+                    fieldDownBottom = Float.parseFloat(inputDownBottom.getText().toString());
+                    if (shape){
+                        if (fieldDownBottom == 0f){
+                            Toast.makeText(context,"底边不能为0",Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }else {
+                        if(inputUpBottom.getText().toString().length()!=0) {
+                            fieldUpBottom = Float.parseFloat(inputUpBottom.getText().toString());
+                            if (fieldDownBottom+fieldUpBottom == 0f){
+                                Toast.makeText(context,"底边不能为0",Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                            intent.putExtra("fieldUpBottom", fieldUpBottom);
+                        }else {
+                            if (fieldDownBottom == 0f){
+                                Toast.makeText(context,"底边不能为0",Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                        }
+                    }
+                    intent.putExtra("fieldDownBottom", fieldDownBottom);
+                }else {
+                    if(!shape){
+                        if(inputUpBottom.getText().toString().length()!=0) {
+                            fieldUpBottom = Float.parseFloat(inputUpBottom.getText().toString());
+                            intent.putExtra("fieldUpBottom", fieldUpBottom);
+                        }
                     }
                 }
                 if (area > 0) {
@@ -169,7 +210,7 @@ public class NewFieldActivity extends Activity{
     }
 
     private void textChanged(){
-        float height = 0,downBottom = 0,upBottom = 0;
+        float height = DEFAULT_HEIGHT,downBottom = DEFAULT_DOWNBOTTOM,upBottom = DEFAULT_UPBOTTOM;
         if(inputHeight.getText().toString().length() != 0){
             height = Float.parseFloat(inputHeight.getText().toString());
         }

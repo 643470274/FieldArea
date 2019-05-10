@@ -7,4 +7,8 @@
     <string name="field_area">面积</string>
     <string name="unit_m2">单位 平方米</string>
     <string name="divide_area">划分面积</string>
+    <string name="input_area_pre_people_hint">单位 亩/人 | 1亩/人</string>
+    <string name="input_height_hint">单位 米 | 100米</string>
+    <string name="input_down_bottom_hint">单位 米 | 100米</string>
+    <string name="input_up_up_bottom_hint">单位 米 | 0米</string>
 </resources>
