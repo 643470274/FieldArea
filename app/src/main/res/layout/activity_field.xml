@@ -31,6 +31,30 @@
             android:textColor="@android:color/white"
             android:textSize="12sp" />
 
+        <Button
+            android:id="@+id/buttonFieldReset"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin_3" />
+
+        <Button
+            android:id="@+id/buttonFieldToBigger"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin_2" />
+
+        <Button
+            android:id="@+id/buttonFieldToSmaller"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin" />
+
     </FrameLayout>
 
     <FrameLayout

@@ -3,6 +3,10 @@
     <dimen name="button_main_activity_side_long">200dp</dimen>
     <dimen name="button_main_activity_margin">10dp</dimen>
     <dimen name="button_middle_side_long">100dp</dimen>
+    <dimen name="button_small_side_long">40dp</dimen>
+    <dimen name="button_small_margin">10dp</dimen>
+    <dimen name="button_small_margin_2">60dp</dimen>
+    <dimen name="button_small_margin_3">110dp</dimen>
     <dimen name="middle_margin">20dp</dimen>
     <dimen name="title_background_top_height">100dp</dimen>
     <dimen name="edit_field_area_height">500dp</dimen>
