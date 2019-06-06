@@ -5,7 +5,7 @@
     <dimen name="button_middle_side_long">100dp</dimen>
     <dimen name="button_small_side_long">40dp</dimen>
     <dimen name="button_small_margin">10dp</dimen>
-    <dimen name="button_small_margin_2">60dp</dimen>
+    <dimen name="button_small_margin_2">50dp</dimen>
     <dimen name="button_small_margin_3">110dp</dimen>
     <dimen name="middle_margin">20dp</dimen>
     <dimen name="title_background_top_height">100dp</dimen>
