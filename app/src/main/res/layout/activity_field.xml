@@ -24,12 +24,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:text="@string/field_area"
             android:textColor="@android:color/white"
             android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/buttonFieldReset"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin_3"
+            android:background="@mipmap/button_field_reset_normal" />
+
+        <Button
+            android:id="@+id/buttonFieldToBigger"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin_2"
+            android:background="@mipmap/button_field_to_bigger_normal" />
+
+        <Button
+            android:id="@+id/buttonFieldToSmaller"
+            android:layout_width="@dimen/button_small_side_long"
+            android:layout_height="@dimen/button_small_side_long"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="@dimen/button_small_margin"
+            android:layout_marginBottom="@dimen/button_small_margin"
+            android:background="@mipmap/button_field_to_smaller_normal" />
 
     </FrameLayout>
 
