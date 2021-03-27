@@ -18,11 +18,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.List;
+import com.fieldarea.whon.fieldarea.common.SetStatusBar;
+import com.fieldarea.whon.fieldarea.common.Translucent;
 
 /**
  * Created by Whon on 2018/6/27.
+ * 新建田地界面
  */
 
 public class NewFieldActivity extends Activity{

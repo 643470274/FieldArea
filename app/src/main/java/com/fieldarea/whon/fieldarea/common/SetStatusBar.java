@@ -1,4 +1,4 @@
-package com.fieldarea.whon.fieldarea;
+package com.fieldarea.whon.fieldarea.common;
 
 import android.os.Build;
 import android.view.View;
@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by Whon on 2018/6/27.
+ * 设置顶部状态栏（包括时间和电池电量的状态栏）字体颜色
  */
 
 public class SetStatusBar {

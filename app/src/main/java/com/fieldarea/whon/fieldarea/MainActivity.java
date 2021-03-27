@@ -11,6 +11,15 @@ import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.fieldarea.whon.fieldarea.common.SetStatusBar;
+import com.fieldarea.whon.fieldarea.common.Translucent;
+
+/**
+ * Created by Whon on 2018/6/27.
+ * 主页界面
+ */
 
 public class MainActivity extends Activity {
 
@@ -52,7 +61,7 @@ public class MainActivity extends Activity {
         openFieldButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(context, "暂时不支持此功能", Toast.LENGTH_SHORT).show();
             }
         });
         newFieldButton.setOnClickListener(new View.OnClickListener() {

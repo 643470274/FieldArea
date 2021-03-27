@@ -1,4 +1,4 @@
-package com.fieldarea.whon.fieldarea;
+package com.fieldarea.whon.fieldarea.common;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 /**
  * Created by Whon on 2018/6/27.
+ * 设置透明顶部状态栏（包括时间和电池电量的状态栏）
  */
 
 public class Translucent {

@@ -19,8 +19,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fieldarea.whon.fieldarea.common.SetStatusBar;
+import com.fieldarea.whon.fieldarea.common.Translucent;
+import com.fieldarea.whon.fieldarea.view.FieldView;
+
 /**
  * Created by Whon on 2018/6/28.
+ * 田地界面
  */
 
 public class FieldActivity extends Activity {

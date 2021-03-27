@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 
 /**
  * Created by Whon on 2018/6/27.
+ * 常量类
  */
 
 public class Constants {

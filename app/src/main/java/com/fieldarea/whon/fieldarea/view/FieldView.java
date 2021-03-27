@@ -1,4 +1,4 @@
-package com.fieldarea.whon.fieldarea;
+package com.fieldarea.whon.fieldarea.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,11 +10,15 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.fieldarea.whon.fieldarea.R;
+import com.fieldarea.whon.fieldarea.Shape;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
 /**
  * Created by Whon on 2018/6/28.
+ * 田地view
  */
 
 public class FieldView extends View{
